@@ -1,0 +1,148 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --cards-color-primary: #f7dd43;
+    --card-border-color: #746615;
+    --card-bg-color: #1d1c19;
+    --bg: url(./assets/bg.svg);
+
+}
+
+body.blue {
+    --cards-color-primary: #338af3;
+    --card-border-color: #338af3;
+    --card-bg-color: #202024;
+    --bg: url(./assets/bg.blue.svg);
+}
+
+body.green {
+    --cards-color-primary: #047c3f;
+    --card-border-color: #047c3f;
+    --card-bg-color: #1a1f1b;
+    --bg: url(./assets/bg.green.svg);
+}
+
+body * {
+    /*font-family: 'Roboto', sans-serif;*/
+}
+
+ul {
+    list-style: none;
+}
+
+body {
+    background-color: #121214;
+    background-image: var(--bg);
+    background-position-y: top;
+    background-position-x: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#app {
+    width: fit-content;
+    margin: 52px auto;
+    padding-top: 52px;
+}
+
+header {
+    margin-bottom: 63px;
+    text-align: center;
+}
+
+.cards {
+    justify-content: center;
+    padding: 32px 23px;
+    text-align: center;
+    width: 300px;
+    margin: 52px auto;
+
+    background: var(--card-bg-color);
+    border-bottom: 2px solid var(--cards-color-primary);
+    border-radius: 6px;
+}
+
+.cards h2 {
+    display: flex;
+    gap: 32px;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 16px;
+    border: 1px solid var(--card-border-color);
+    border-radius: 6px;
+    width: fit-content;
+    margin-inline:auto;
+    margin-bottom: 53px;
+    color: #F7DD43
+}
+
+.cards h2 span {
+    color: #e1e1e6;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.cards ul li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cards ul {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 250px;
+}
+
+.cards ul li + li {
+    padding-top: 24px;
+    border-top: 1px;
+    color: #e1e1e6;
+
+}
+
+.cards ul li  strong {
+    color: #e1e1e6;
+    font-size: 36px;
+    font-weight: 900;
+    line-height: 125%;
+}
+
+.cards h2:hover,
+.cards ul li strong:hover,
+.cards ul li img:hover {
+transform: scale(1.1);
+}
+
+.cards h2,
+.cards ul li strong,
+.cards ul li img {
+transition: transform 0.3s;
+}
+
+.cards {
+    animation: appear .5s;
+}
+
+@keyframes appear {
+    0% {
+        transform: translateY(-30px);
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@media (min-width: 700px) {
+    .cards {
+        max-width: 670px;
+        flex-direction:row;
+        flex-wrap: wrap;
+    } 
+} /*verificar para colocar os cards um ao lado do outro(*/
